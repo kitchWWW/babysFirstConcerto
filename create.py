@@ -10,11 +10,14 @@ lowestAccomp = int(myArgs[4])
 highestAccomp = int(myArgs[5])
 waysToPlay = myArgs[6:]
 
+print "hello from the creator!"
+print waysToPlay
+
 TRANSPOSITION_FACTOR = (int(favoritePitch)-2)%12#because origionally written in D.
 SOLO_SECTION = 'solo'
 
 ACTUAL_FUCKING_PITCH = favoritePitch%12
-ACTUAL_FUCKING_OCTAVE = int(favoritePitch/12) - 4
+ACTUAL_FUCKING_OCTAVE = int(favoritePitch/12) - 3
 highestNote = highestAccomp
 lowestNote = lowestAccomp
 
@@ -23,7 +26,14 @@ directions = []
 for item in waysToPlay:
 	if 'A_LABEL_TO_USE_' in item:
 		item = item.replace("A_LABEL_TO_USE_",'')
-		directions.append(['^\\markup{{"{message}"}}'.format(message=item.replace('_',' ')),''])
+		directions.append(['^\\markup{{"{message}"}}'.format(message=item
+			.replace('_SPACE_',' ')
+			.replace('_FULLSTOP_','.')
+			.replace('_LPAREN_','(')
+			.replace('_RPAREN_',')')
+			.replace('_COMMA_',',')),''])
+
+print directions
 
 directions.append([SOLO_SECTION,SOLO_SECTION])
 

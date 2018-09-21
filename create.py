@@ -21,7 +21,9 @@ lowestNote = lowestAccomp
 
 directions = []
 for item in waysToPlay:
-	directions.append(['^\\markup{{"{message}"}}'.format(message=item.replace('_',' ')),''])
+	if 'A_LABEL_TO_USE_' in item:
+		item = item.replace("A_LABEL_TO_USE_",'')
+		directions.append(['^\\markup{{"{message}"}}'.format(message=item.replace('_',' ')),''])
 
 directions.append([SOLO_SECTION,SOLO_SECTION])
 

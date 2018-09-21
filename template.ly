@@ -46,6 +46,7 @@ tagline =""
 %clef
 %key
 %part2
+\bar "|."
 	}
     
 \new PianoStaff <<

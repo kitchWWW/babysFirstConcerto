@@ -17,7 +17,7 @@ max-systems-per-page=4
 
 
 \header{
-title ="Baby's First Concerto"
+title ="Split Music"
 subtitle="
 %time
 "
